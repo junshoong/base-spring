@@ -5,11 +5,11 @@ public class ItemDetails {
 	
 	private String content;
 	
-	private int level;
+	private String level;
 	
 	public ItemDetails() { }
 	
-	public ItemDetails(long id, String content, int level) {
+	public ItemDetails(long id, String content, String level) {
 		this.id = id;
 		this.content = content;
 		this.level = level;
@@ -31,11 +31,11 @@ public class ItemDetails {
 		this.content = content;
 	}
 
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 	
