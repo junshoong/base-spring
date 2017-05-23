@@ -1,15 +1,15 @@
 package net.junshoong.sample.domain;
 
-public class ItemDetails {
+public class Item {
 	private long id;
 	
 	private String content;
 	
 	private String level;
 	
-	public ItemDetails() { }
+	public Item() { }
 	
-	public ItemDetails(long id, String content, String level) {
+	public Item(long id, String content, String level) {
 		this.id = id;
 		this.content = content;
 		this.level = level;

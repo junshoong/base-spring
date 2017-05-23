@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.junshoong.sample.domain.ItemDetails;
+import net.junshoong.sample.domain.Item;
 import net.junshoong.sample.service.ItemService;
 
 @Controller
@@ -20,11 +20,11 @@ public class ItemController {
 	
 	@Autowired
 	private ItemService itemService;
-	
+
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView listItems() {
-		Map<String, List<ItemDetails>> modelData = new HashMap<String, List<ItemDetails>>();
-		modelData.put("itemList", itemService.getItems());
+		Map<String, List<Item>> modelData = new HashMap<String, List<Item>>();
+		System.out.println(this.itemService.getItemMapper("1"));
 		return new ModelAndView("itemList", modelData);
 	}
 	
@@ -42,7 +42,7 @@ public class ItemController {
 			errorData.put("error.content", "enter a String");
 		}
 		
-		ItemDetails itemDetails = new ItemDetails();
+		Item itemDetails = new Item();
 		itemDetails.setContent(content);
 		itemDetails.setLevel(level);
 		
@@ -50,7 +50,7 @@ public class ItemController {
 			errorData.put("itemDetail", itemDetails);
 			return new ModelAndView("itemList", errorData);
 		} else {
-			itemService.saveItem(itemDetails);
+//			itemService.saveItem(itemDetails);
 			return new ModelAndView("redirect:/item/list");
 		}
 		

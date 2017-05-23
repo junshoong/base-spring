@@ -1,17 +1,19 @@
 package net.junshoong.sample.service;
 
-import java.util.List;
+import net.junshoong.sample.domain.Item;
+import net.junshoong.sample.mapper.ItemMapper;
 
-import net.junshoong.sample.domain.ItemDetails;
+public class ItemService {
+	
+	private ItemMapper itemMapper;
 
-public interface ItemService {
-	List<ItemDetails> getItems();
+	public void setItemMapper(ItemMapper itemMapper) {
+		this.itemMapper = itemMapper;
+	}
 	
-	void saveItem(ItemDetails itemDetails);
+	public Item getItemMapper(String itemId) {
+		return itemMapper.getItem(itemId);
+	}
 	
-	void removeItem(int itemId);
 	
-	ItemDetails getItem(int itemId);
-	
-	void editItem(ItemDetails itemDetails);
 }
