@@ -20,7 +20,7 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 	
-	@RequestMapping(value = "/value", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView listItems() {
 		Map<String, List<ItemDetails>> modelData = new HashMap<String, List<ItemDetails>>();
 		modelData.put("itemList", itemService.getItems());
